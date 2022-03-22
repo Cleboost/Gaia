@@ -1,0 +1,18 @@
+{
+    "lang": "en",
+    "db":
+    {
+        "host":"",
+        "user":"",
+        "password":"",
+        "database":""
+    },
+    "log":
+    {
+        "connect":true
+    },
+    "schema": 
+    {
+        
+    }
+ }
