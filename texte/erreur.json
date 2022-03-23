@@ -5,6 +5,6 @@
     },
     "fr": {
         "Efile":"Remplissez le fichier ",
-        "Esche":"Remplissez la parti scheme (dans config_gaia.json) pour votre base de dnonnées"
+        "Esche":"Remplissez la parti schema (dans config_gaia.json) pour votre base de dnonnées"
     }
 }
