@@ -1,10 +1,10 @@
 {
     "en": {
         "Efile":"Fill the file ",
-        "Esche":"Fill the schema part (in config_)of your data base"
+        "Esche":"Fill the schema part (in config_gaia.json) for your data base"
     },
     "fr": {
         "Efile":"Remplissez le fichier ",
-        "Esche":"Remplissez"
+        "Esche":"Remplissez la parti scheme (dans config_gaia.json) pour votre base de dnonnées"
     }
 }
