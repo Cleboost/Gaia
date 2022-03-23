@@ -1,8 +1,10 @@
 {
     "en": {
-        "Efile":"Fill the file "
+        "Efile":"Fill the file ",
+        "Esche":"Fill the schema part (in config_)of your data base"
     },
     "fr": {
-        "Efile":"Remplissez le fichier "
+        "Efile":"Remplissez le fichier ",
+        "Esche":"Remplissez"
     }
 }
