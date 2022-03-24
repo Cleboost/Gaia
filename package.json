@@ -4,7 +4,7 @@
   "description": "An API for developpement for mysql save discord.js and for text translate.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Le script de test est en cours de developpement !\" && exit 1"
   },
   "author": "Bot Encoders Studio",
   "license": "ISC",
