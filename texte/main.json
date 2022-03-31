@@ -1,9 +1,18 @@
 {
-    "lang": ["fr", "en"],
+    "lang": [
+        "fr",
+        "en"
+    ],
     "en": {
-        "connect":["Connected to "," on "]
+        "connect": [
+            "Connected to ",
+            " on "
+        ]
     },
     "fr": {
-        "connect":["Connecté à "," sur "]
+        "connect": [
+            "Connecté à ",
+            " sur "
+        ]
     }
 }
