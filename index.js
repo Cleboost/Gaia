@@ -18,7 +18,9 @@ module.exports.start = () => {
         return console.log("Merci de définire un langue existante " + t_main.lang)
     };
     let lang = config.lang;
-
+    if (config.schema[0] == undefined) {
+        return console.log(t_erreur[lang].Esche);
+    }
     //recupere les donnees de connection
     let con = mysql.createConnection({
         host: config.db.host,
