@@ -10,16 +10,15 @@ module.exports.start = () => {
         //sinon le creer
         writeFileSync('./config_gaia.json', JSON.stringify(require('./ex_config.json')));
         return console.log(t_erreur["fr"].Efile + "config_gaia.json !!");
-        //writeFileSync('./api-sans-nom/', JSON.stringify(_data));
     };
-
+    //verif si une langue est def
     const config = require('./../config_gaia.json');
     if (t_main.lang.indexOf(config.lang) === -1) {
         return console.log("Merci de définire un langue existante " + t_main.lang)
     };
     let lang = config.lang;
     if (config.schema[0] == undefined) {
-        return console.log(t_erreur[lang].Esche);
+        return console.log(t_erreur[lang].Esche); //schem vide
     }
     //recupere les donnees de connection
     let con = mysql.createConnection({
