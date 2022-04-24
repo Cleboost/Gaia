@@ -18,9 +18,9 @@ module.exports.start = () => {
         return console.log("Merci de définire un langue existante " + t_main.lang)
     };
     let lang = config.lang;
-    if (config.schema[0] == undefined) {
+    /*if (config.schema[0] == undefined) {
         return console.log(t_erreur[lang].Esche); //schem vide
-    }
+    }*/
     //recupere les donnees de connection
     let con = mysql.createConnection({
         host: config.db.host,
@@ -35,14 +35,18 @@ module.exports.start = () => {
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
         module.exports = con;
         dbReady = true;
+        module.exports = {
+            get: require('./src/get.js'),
+            search: require('./src/search.js')
+        };
     });
 };
 
 // Exporte de toutes les fonctions
-console.log(dbReady)
+/*await console.log(dbReady);
 if (dbReady === true) {
     module.exports = {
         get: require('./src/get.js'),
         search: require('./src/search.js')
     };
-};
+};*/
