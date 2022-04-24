@@ -1,0 +1,16 @@
+{
+    "en": {
+        "nData": "No data for the element ",
+        "dExe": [
+            "The element ",
+            " don't exist"
+        ]
+    },
+    "fr": {
+        "nData": "Pas de donnée pour l'element ",
+        "dExe": [
+            "L'element ",
+            " n'existe pas"
+        ]
+    }
+}
