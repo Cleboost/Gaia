@@ -4,6 +4,7 @@ const { writeFileSync, existsSync } = require('fs');
 const t_erreur = require('./texte/erreur.json');
 const t_main = require('./texte/main.json');
 
+let dbReady = false;
 module.exports.start = () => {
     //verifie si le fichier config_api.json est existant
     if (!existsSync('./config_gaia.json')) {
@@ -27,10 +28,21 @@ module.exports.start = () => {
         password: config.db.password,
         database: config.db.database
     });
+
     //connect @con à la bdd
     con.connect(function (err) {
         if (err) throw err;
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
         module.exports = con;
+        dbReady = true;
     });
+};
+
+// Exporte de toutes les fonctions
+console.log(dbReady)
+if (dbReady === true) {
+    module.exports = {
+        get: require('./src/get.js'),
+        search: require('./src/search.js')
+    };
 };
