@@ -4,7 +4,6 @@ const { writeFileSync, existsSync } = require('fs');
 const t_erreur = require('./texte/erreur.json');
 const t_main = require('./texte/main.json');
 
-let dbReady = false;
 module.exports.start = () => {
     //verifie si le fichier config_api.json est existant
     if (!existsSync('./config_gaia.json')) {
@@ -21,6 +20,7 @@ module.exports.start = () => {
     /*if (config.schema[0] == undefined) {
         return console.log(t_erreur[lang].Esche); //schem vide
     }*/
+    
     //recupere les donnees de connection
     let con = mysql.createConnection({
         host: config.db.host,
@@ -31,22 +31,13 @@ module.exports.start = () => {
 
     //connect @con à la bdd
     con.connect(function (err) {
-        if (err) throw err;
+        if (err) return console.log(t_erreur[lang].EconDB);
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
         module.exports = con;
-        dbReady = true;
+        // Exporte de toutes les fonctions
         module.exports = {
             get: require('./src/get.js'),
             search: require('./src/search.js')
         };
     });
 };
-
-// Exporte de toutes les fonctions
-/*await console.log(dbReady);
-if (dbReady === true) {
-    module.exports = {
-        get: require('./src/get.js'),
-        search: require('./src/search.js')
-    };
-};*/
