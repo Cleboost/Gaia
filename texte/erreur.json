@@ -7,7 +7,7 @@
     "fr": {
         "Efile": "\nRemplissez le fichier ",
         "Esche": "\nRemplissez la parti schema (dans 'config_gaia.json') pour votre base de données\n",
-        "EconDB": "\nErreure de connection, vous avez du oublier de remplire la parti sur la base de données de 'config_gaia.json'\n"
+        "EconDB": "\nErreure de connection, vous avez du oublier de remplir la partie sur la base de données de 'config_gaia.json'\n"
     },
     "es": {
         "Efile": "0",
