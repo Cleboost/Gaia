@@ -1,13 +1,13 @@
 {
     "en": {
-        "Efile": "Fill the file ",
-        "Esche": "Fill the schema part (in 'config_gaia.json') for your data base",
-        "EconDB": "Connection error, you mayt have forgot to fill the data base part of 'config_gaia.json'"
+        "Efile": "\nFill the file ",
+        "Esche": "\nFill the schema part (in 'config_gaia.json') for your data base\n",
+        "EconDB": "\nConnection error, you mayt have forgot to fill the data base part of 'config_gaia.json'\n"
     },
     "fr": {
-        "Efile": "Remplissez le fichier ",
-        "Esche": "Remplissez la parti schema (dans 'config_gaia.json') pour votre base de données",
-        "EconDB": "Erreure de connection, vous avez du oublier de remplire la parti sur la base de données de 'config_gaia.json'"
+        "Efile": "\nRemplissez le fichier ",
+        "Esche": "\nRemplissez la parti schema (dans 'config_gaia.json') pour votre base de données\n",
+        "EconDB": "\nErreure de connection, vous avez du oublier de remplire la parti sur la base de données de 'config_gaia.json'\n"
     },
     "es": {
         "Efile": "0",
