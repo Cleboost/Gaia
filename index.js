@@ -20,7 +20,6 @@ module.exports.start = () => {
     /*if (config.schema[0] == undefined) {
         return console.log(t_erreur[lang].Esche); //schem vide
     }*/
-    
     //recupere les donnees de connection
     let con = mysql.createConnection({
         host: config.db.host,
@@ -28,16 +27,18 @@ module.exports.start = () => {
         password: config.db.password,
         database: config.db.database
     });
-
     //connect @con à la bdd
     con.connect(function (err) {
         if (err) return console.log(t_erreur[lang].EconDB);
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
-        module.exports = con;
         // Exporte de toutes les fonctions
         module.exports = {
             get: require('./src/get.js'),
-            search: require('./src/search.js')
+            search: require('./src/search.js'),
+            discord: require('./src/discord.js'),
+            save: require('./src/save.js'),
+            con: con, //const con = require('./../index.json').con;
+            lang: lang //const lang = require('./../index.json').lang;
         };
     });
 };

@@ -2,12 +2,16 @@
     "en": {
         "Efile": "\nFill the file ",
         "Esche": "\nFill the schema part (in 'config_gaia.json') for your data base\n",
-        "EconDB": "\nConnection error, you mayt have forgot to fill the data base part of 'config_gaia.json'\n"
+        "EconDB": "\nConnection error, you mayt have forgot to fill the data base part of 'config_gaia.json'\n",
+        "EdisCompte": "\nThe compte_table part of discord (in 'config_gaia.json') is not fill\n",
+        "Mres": "\nThere is multiple result, only 1 was expected\n"
     },
     "fr": {
         "Efile": "\nRemplissez le fichier ",
         "Esche": "\nRemplissez la parti schema (dans 'config_gaia.json') pour votre base de données\n",
-        "EconDB": "\nErreure de connection, vous avez du oublier de remplir la partie sur la base de données de 'config_gaia.json'\n"
+        "EconDB": "\nErreure de connection, vous avez du oublier de remplir la partie sur la base de données de 'config_gaia.json'\n",
+        "EdisCompte": "\nLa parti compte_table de discord (dans 'config_gaia.json') n'est pas rempli\n",
+        "Mres": "\nIl y a plusieurs resultat, il en était atendu que 1\n"
     },
     "es": {
         "Efile": "0",

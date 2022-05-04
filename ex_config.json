@@ -9,5 +9,7 @@
     "log": {
         "connect": true
     },
-    "schema": {}
+    "discord": {
+        "compte_table": ""
+    }
 }
