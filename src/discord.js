@@ -1,7 +1,8 @@
-const con = require('./../index.json').con;
-const lang = require('./../index.json').lang;
-const config_d = require('./../config_gaia.json').discord;
-const er = require('./..texte/erreur.json');
+const con = require('./../index.js').con;
+const lang = require('./../index.js').lang;
+const config_d = require('./../../config_gaia.json').discord;
+const er = require('./../texte/erreur.json');
+
 //get table.data  de @d_id dans @table
 module.exports.get = (table, d_id) => {
     con.query("SELECT * FROM " + table + " WHERE discord_id = '" + d_id + "'", function (err, result, fields) {
