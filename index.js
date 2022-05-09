@@ -4,7 +4,20 @@ const { writeFileSync, existsSync } = require('fs');
 const t_erreur = require('./texte/erreur.json');
 const t_main = require('./texte/main.json');
 
-let connect = false;
+let con;
+let lang;
+// let connect = false;
+try {
+    module.exports.test = () => {
+        console.log(9000);
+    }
+} catch (err) {
+    if (err){
+        console.log(err);
+    }
+}
+
+
 module.exports.start = () => {
     //verifie si le fichier config_api.json est existant
     if (!existsSync('./config_gaia.json')) {
@@ -17,12 +30,12 @@ module.exports.start = () => {
     if (t_main.lang.indexOf(config.lang) === -1) {
         return console.log("Merci de définire un langue existante " + t_main.lang)
     };
-    let lang = config.lang;
+    lang = config.lang;
     /*if (config.schema[0] == undefined) {
         return console.log(t_erreur[lang].Esche); //schem vide
     }*/
     //recupere les donnees de connection
-    let con = mysql.createConnection({
+    con = mysql.createConnection({
         host: config.db.host,
         user: config.db.user,
         password: config.db.password,
@@ -32,12 +45,21 @@ module.exports.start = () => {
     con.connect(function (err) {
         if (err) return console.log(t_erreur[lang].EconDB);
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
-        connect=true;
-
+        //connect = true;
     });
 };
- // Exporte de toutes les fonctions
-if(connect) {
+console.log("exports : ok");
+module.exports = {
+    get: require('./src/get.js'),
+    search: require('./src/search.js'),
+    discord: require('./src/discord.js'),
+    save: require('./src/save.js'),
+    con: con, //const con = require('./../index.js').con;
+    lang: lang //const lang = require('./../index.js').lang;
+};
+// Exporte de toutes les fonctions de l'api
+/*if (connect) {
+    console.log("exports : ok");
     module.exports = {
         get: require('./src/get.js'),
         search: require('./src/search.js'),
@@ -46,4 +68,4 @@ if(connect) {
         con: con, //const con = require('./../index.json').con;
         lang: lang //const lang = require('./../index.json').lang;
     };
-}
+}*/
