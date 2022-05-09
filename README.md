@@ -3,4 +3,4 @@
 ### Fonctionalités :
 * Gère les données de vos utilisateurs dans une base de données mysql
 * Gère des différentes langues pour les textes de vos bots
-* ?? Renforce la sécurité de votre code et de vos bot ??
+* Renforce la sécurité des données de vos utilisateurs sur votre bot discord ??
