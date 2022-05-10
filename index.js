@@ -6,7 +6,7 @@ const t_main = require('./texte/main.json');
 
 let con;
 let lang;
-// let connect = false;
+let connect = false;
 
 module.exports.start = () => {
     //verifie si le fichier config_api.json est existant
@@ -35,20 +35,11 @@ module.exports.start = () => {
     con.connect(function (err) {
         if (err) return console.log(t_erreur[lang].EconDB);
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
-        //connect = true;
+        connect = true;
     });
 };
-console.log("exports : ok");
-module.exports = {
-    get: require('./src/get.js'),
-    search: require('./src/search.js'),
-    discord: require('./src/discord.js'),
-    save: require('./src/save.js'),
-    con: con, //const con = require('./../index.js').con;
-    lang: lang //const lang = require('./../index.js').lang;
-};
 // Exporte de toutes les fonctions de l'api
-/*if (connect) {
+if (connect) {
     console.log("exports : ok");
     module.exports = {
         get: require('./src/get.js'),
@@ -58,4 +49,4 @@ module.exports = {
         con: con, //const con = require('./../index.json').con;
         lang: lang //const lang = require('./../index.json').lang;
     };
-}*/
+}
