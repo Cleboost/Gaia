@@ -3,6 +3,11 @@ const mysql = require('mysql');
 const { writeFileSync, existsSync } = require('fs');
 const t_erreur = require('./texte/erreur.json');
 const t_main = require('./texte/main.json');
+const AsciiTable = require('ascii-table')
+
+var tableToLog = new AsciiTable('Function Loader')
+tableToLog
+    .setHeading("Function", "Load");
 
 let con, lang, connect = false;
 
@@ -34,17 +39,22 @@ module.exports.start = () => {
         if (err) return console.log(t_erreur[lang].EconDB);
         if (config.log.connect) console.log(t_main[lang].connect[0] + config.db.database + t_main[lang].connect[1] + config.db.host);//msg de connection
         connect = true;
+        consoleLog()
     });
 };
-// Exporte de toutes les fonctions de l'api
-if (connect) {
-    console.log("exports : ok");
-    module.exports = {
-        get: require('./src/get.js'),
-        search: require('./src/search.js'),
-        discord: require('./src/discord.js'),
-        save: require('./src/save.js'),
-        con: con, //const con = require('./../index.json').con;
-        lang: lang //const lang = require('./../index.json').lang;
-    };
+
+do{
+
+}while (!connect)
+module.exports.con = con;
+module.exports.lang = lang;
+module.exports.get = require('./src/get.js');
+module.exports.discord = require('./src/discord.js');
+module.exports.save = require('./src/save.js');
+module.exports.search = require('./src/search.js');
+
+function consoleLog() {
+    tableToLog
+        .setHeading("Function", "Load")
+        .addRow('Start', "OK")
 }
