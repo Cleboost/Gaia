@@ -4,9 +4,7 @@ const { writeFileSync, existsSync } = require('fs');
 const t_erreur = require('./texte/erreur.json');
 const t_main = require('./texte/main.json');
 
-let con;
-let lang;
-let connect = false;
+let con, lang, connect = false;
 
 module.exports.start = () => {
     //verifie si le fichier config_api.json est existant
