@@ -7,16 +7,6 @@ const t_main = require('./texte/main.json');
 let con;
 let lang;
 // let connect = false;
-try {
-    module.exports.test = () => {
-        console.log(9000);
-    }
-} catch (err) {
-    if (err){
-        console.log(err);
-    }
-}
-
 
 module.exports.start = () => {
     //verifie si le fichier config_api.json est existant
