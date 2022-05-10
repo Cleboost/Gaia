@@ -2,7 +2,7 @@
     "en": {
         "Efile": "\nFill the file ",
         "Esche": "\nFill the schema part (in 'config_gaia.json') for your data base\n",
-        "EconDB": "\nConnection error, you mayt have forgot to fill the data base part of 'config_gaia.json'\n",
+        "EconDB": "\nConnection error, you may have forgot to fill the data base part of 'config_gaia.json'\n",
         "EdisCompte": "\nThe compte_table part of discord (in 'config_gaia.json') is not fill\n",
         "Mres": "\nThere is multiple result, only 1 was expected\n"
     },
