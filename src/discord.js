@@ -19,13 +19,26 @@ module.exports.save = (table, d_id, data, dt_col="data") => {
 };
 if (config_d.compte_table != "") {
     module.exports.aCompte = (d_id) => {
-        con.query("SELECT * " + config_d.compte_table + " WHERE discord_id = '" + d_id + "'", function (err, result, fields) {
+        return _aCompte(d_id);
+    }
+    //recupere le compte de @d_id dans @config_d.compte_table
+    module.exports.getCompte = (d_id) => {
+        if (!_aCompte(d_id)) return false;
+        con.query("SELECT * FROM " + config_d.compte_table + " WHERE discord_id = '" + d_id + "'", function (err, result, fields) {
             if (err) throw err;
             if (result.length > 1) return console.log(er[lang].Mres);
-            console.log(d_id+" : "+result);
-            return true;
+            return result[0];
         });
-    }
+    };
 } else {
     console.log(er[lang].EdisCompte);
 };
+//revenoi true si il @d_id a un compte sinon false
+function _aCompte(d_id) {
+    con.query("SELECT * " + config_d.compte_table + " WHERE discord_id = '" + d_id + "'", function (err, result, fields) {
+        if (err) throw err;
+        if (result.length > 1) return console.log(er[lang].Mres);
+        console.log(d_id+" : "+result);
+        return true;
+    });
+}
