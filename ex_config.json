@@ -1,10 +1,10 @@
 {
     "lang": "en",
     "db": {
-        "host": "",
-        "user": "",
-        "password": "",
-        "database": ""
+        "host": "myhost.com",
+        "user": "monuser",
+        "password": "1234",
+        "database": "bddtest"
     },
     "log": {
         "connect": true
