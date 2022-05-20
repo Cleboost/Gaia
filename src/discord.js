@@ -3,7 +3,7 @@ const c = require('./../../config_gaia.json');
 const er = require('./../texte/erreur.json');
 const mysql = require('mysql');
 const m = require('./../texte/main.json');
-con = mysql.createConnection({
+let con = mysql.createConnection({
     host: c.db.host,
     user: c.db.user,
     password: c.db.password,
