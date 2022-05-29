@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Le script de test est en cours de developpement !\" && exit 1",
-    "addLang": "node src/createLang.js"
+    "addLang": "node src/createLang.js",
+    "start()": "Pour utiliser gaia"
   },
   "author": "Bot Encoders Studio",
   "license": "ISC",
